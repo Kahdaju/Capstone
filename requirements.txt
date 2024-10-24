@@ -6,5 +6,4 @@ chromadb
 crewai
 openai
 python-dotenv
-os
 chromadb
