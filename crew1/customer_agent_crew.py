@@ -1,5 +1,5 @@
 from crewai import Agent, Crew, Process, Task
-from crewai_tools import WebsiteSearchTool, ScrapeWebsiteTool, PDFSearchTool
+from crewai_tools import (ScrapeWebsiteTool, PDFSearchTool)
 from dotenv import load_dotenv
 from openai import OpenAI
 import os
@@ -16,7 +16,7 @@ else:
 
 # --- Tools ---
 
-website_search= WebsiteSearchTool(website='https://www.cpf.gov.sg/member/retirement-income')
+website_search= ScrapeWebsiteTool(website='https://www.cpf.gov.sg/member/retirement-income')
 
 scrapetool = ScrapeWebsiteTool(website_url='https://www.cpf.gov.sg/service/sub-categories?category=P_M_RI')
 
