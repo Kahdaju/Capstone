@@ -1,5 +1,4 @@
 from crewai import Agent, Crew, Process, Task
-from crewai_tools import Tools
 from crewai_tools import (WebsiteSearchTool, ScrapeWebsiteTool, PDFSearchTool)
 from dotenv import load_dotenv
 from openai import OpenAI
