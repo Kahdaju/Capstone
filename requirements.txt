@@ -2,6 +2,7 @@ pandas
 numpy
 chromadb
 crewai
+crewai-tools
 openai
 python-dotenv
 chromadb
