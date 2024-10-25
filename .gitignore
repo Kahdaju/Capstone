@@ -23,6 +23,3 @@ dist/
 # Streamlit
 .streamlit/secrets.toml
 
-# CrewAI Specific
-crewai_config.json
-crewai_data/
