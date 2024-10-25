@@ -1,4 +1,4 @@
-streamlit
+streamlit==1.39.0
 hmac
 pandas
 numpy
@@ -8,3 +8,4 @@ openai
 python-dotenv
 chromadb
 pysqlite3-binary
+python==3.12.0
