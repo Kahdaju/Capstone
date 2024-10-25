@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 from crewai import Agent, Crew, Process, Task
-from crewai_tools import WebsiteSearchTool, ScrapeWebsiteTool, PDFSearchTool,DOCXSearchTool
+from crewai_tools import (WebsiteSearchTool, ScrapeWebsiteTool, PDFSearchTool,DOCXSearchTool)
 from dotenv import load_dotenv
 from openai import OpenAI
 import os
