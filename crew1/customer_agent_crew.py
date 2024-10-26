@@ -1,10 +1,14 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 from crewai import Agent, Crew, Process, Task
 from crewai_tools import (ScrapeWebsiteTool, PDFSearchTool)
 from dotenv import load_dotenv
 from openai import OpenAI
 import os
 import streamlit as st
-from IPython.display import Markdown
+
 
 
 #api keys

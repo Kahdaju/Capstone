@@ -6,7 +6,7 @@ from crewai_tools import (WebsiteSearchTool, ScrapeWebsiteTool, PDFSearchTool,DO
 from dotenv import load_dotenv
 from openai import OpenAI
 import os
-from crewai_tools import tool
+
 
 
 
