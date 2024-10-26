@@ -1,12 +1,12 @@
 # Capstone Project for AI Bootcamp
-## _CPF Retirement App_
+## CPF Retirement App
 
 The CPF Retirement App is a capstone project for GovTech's AI Bootcamp 2024
-For this project, I have chosen to challenge myself using CrewAI and Streamlit. It has a multi-page app, with 2 use cases.
+For this project, I have chosen to challenge myself using CrewAI and Streamlit. It is a multi-page app, with 2 use cases.
 
 ## Features/Use Case
 ### CPF Retirement Query
-- User will be able to enter the questions/queris into the textbox
+- User will be able to enter the questions/queries into the textbox
 - Once the Submit button is clicked, the CrewAI agents get to work, using the PDF and ScrapeWebsiteTool to obtain information. The data in the PDF has been derived from the CPF Retirement FAQs page. Due to the sheer number of questions, I have randomly picked a few common ones to use as dummy data. 
 - The agent will reply in _st.markdown_ format.
 
