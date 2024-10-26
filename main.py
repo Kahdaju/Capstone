@@ -1,13 +1,28 @@
 # Set up and run this Streamlit App
 import streamlit as st
+import time
 import hmac
 import pandas as pd
+from crewai import Agent, Crew, Process, Task
+from crewai_tools import (ScrapeWebsiteTool, PDFSearchTool)
+from dotenv import load_dotenv
+from openai import OpenAI
+import os
+from IPython.display import Markdown
 
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# __import__('pysqlite3')
+# import sys
+# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 from crew1.customer_agent_crew import process_user_message
+
+
+#api keys
+if load_dotenv('.env'):
+   #for local machine development
+   OPENAI_KEY =os.getenv('OPENAI_API_KEY')
+else:
+    OPENAI_KEY =st.secrets['OPENAI_API_KEY']
 
 #  <--------- Check Password Configuration --------->
 def check_password():
@@ -32,7 +47,6 @@ def check_password():
     if "password_correct" in st.session_state:
         st.error("😕 Password incorrect")
     return False
-
 
 if not check_password():
     st.stop()  # Do not continue if check_password is not True.
@@ -59,11 +73,8 @@ user_prompt = form.text_area("Enter your queries into the box below", height=100
 
 if form.form_submit_button("Submit"):
     
-    st.toast(f"Let me find out for you on your enquiry - {user_prompt}")
-
+    st.toast(f"Let me find out for you on your enquiry - {user_prompt}. Please wait for the answers...")
     st.divider()
-
     response = process_user_message(user_prompt)
-   
     st.markdown(response)
 

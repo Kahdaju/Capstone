@@ -41,8 +41,7 @@ with st.expander("Features on This Site"):
     st.write("1. Input your details.")
     st.write("2. Click the 'Set Goal' button.")
     st.write("3. The app will plan a retirement strategy based on your inputs.")
-    st.subheader("Statistics on Retirement")
-    st.write("This shows information on the total payout disbursed by CPFB through the years.")
+
    
 
 

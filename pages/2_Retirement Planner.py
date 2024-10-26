@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 import numpy as np
 from crewai import Agent, Crew, Process, Task
 from crewai_tools import (WebsiteSearchTool, ScrapeWebsiteTool, PDFSearchTool,DOCXSearchTool)
@@ -31,8 +32,12 @@ with st.form("plan_form"):
        st.subheader("Retirement goal at 65",divider="green")
        st.subheader(f"Your payout goal in today's dollars : ${pv:,.0f}")
        st.subheader(f"Your payout goal at 65 with inflation of 2% factored in : ${future_value:,.0f}")
+       with st.spinner('Taking in your inputs and planning your retirement...'):
+        time.sleep(5)
+        st.success("The retirement plan will be shown below. Thank you for your patience!")
     else:
         pass
+   
 
 
 #tools

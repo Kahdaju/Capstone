@@ -17,10 +17,7 @@ else:
 # --- Tools ---
 
 website_search= ScrapeWebsiteTool(website='https://www.cpf.gov.sg/member/retirement-income')
-
-scrapetool = ScrapeWebsiteTool(website_url='https://www.cpf.gov.sg/service/sub-categories?category=P_M_RI')
-
-pdf_search=PDFSearchTool(pdf='data\FAQS.pdf')
+pdf_search=PDFSearchTool(pdf='data/FAQS.pdf')
 
 # --- Agents ---
 
@@ -38,7 +35,7 @@ research_agent = Agent(
         Provide the information to the customer agent.
         """
     ),
-    tools=[website_search,scrapetool,pdf_search],
+    tools=[website_search,pdf_search],
 
 )
 
@@ -54,7 +51,7 @@ customer_agent = Agent(
         clear and concise replies based on the provided information.
         """
     ),
-    tools=[website_search,scrapetool,pdf_search],
+    tools=[website_search,pdf_search],
 )
 
 
@@ -76,7 +73,7 @@ research_task = Task(
         Do not make assumptions.
         """
         ,
-    tools=[website_search,scrapetool,pdf_search],
+    tools=[website_search,pdf_search],
     agent=research_agent,
 )
 
@@ -96,7 +93,7 @@ reply_task = Task(
         answers found from the website and also answers from the Research Agent. Sign off
         your name as CPF AI Retirement Bot
         """,
-    tools=[website_search,scrapetool,pdf_search],
+    tools=[website_search,pdf_search],
     agent=customer_agent,
 )
 
