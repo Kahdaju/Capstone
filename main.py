@@ -1,18 +1,16 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 # Set up and run this Streamlit App
 import streamlit as st
 import time
 import hmac
 import pandas as pd
-from crewai import Agent, Crew, Process, Task
-from crewai_tools import (ScrapeWebsiteTool, PDFSearchTool)
-from dotenv import load_dotenv
-from openai import OpenAI
-import os
-from IPython.display import Markdown
 
-# __import__('pysqlite3')
-# import sys
-# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 from crew1.customer_agent_crew import process_user_message
 
